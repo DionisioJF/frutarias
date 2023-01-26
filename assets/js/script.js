@@ -1,3 +1,5 @@
+
+
 function addFruit() { 
     var fruitName = document.getElementById("fruit-name").value; 
     var fruitBag = document.getElementById("fruit-bag").value; 
@@ -46,30 +48,26 @@ function removeFruit(event) {
     // Atualize o conteúdo da tabela com os dados do JSON
 });
 
-
-fetch('./fruit-table.json')
-  .then(response => response.json())
-  .then(data => {
-    // Obtém a tabela do HTML
-    let table = document.getElementById('fruit-table');
-
-    // Limpa a tabela antes de adicionar as novas linhas
-    while (table.rows.length > 1) {
-      table.deleteRow(1);
-    }
-
-    // Adiciona as linhas com os dados do JSON
-    data.forEach(fruit => {
-      let row = table.insertRow();
-      let nameCell = row.insertCell();
-      let bagCell = row.insertCell();
-      let quantityCell = row.insertCell();
-
-      nameCell.innerHTML = fruit.name;
-      bagCell.innerHTML = fruit.bag;
-      quantityCell.innerHTML = fruit.quantity;
-    });
-  });
+window.onload = function() {
+  // carregar o arquivo fruit-table.json
+  fetch('fruit-table.json')
+      .then(response => response.json())
+      .then(data => {
+          // usar o conteúdo do arquivo para atualizar a tabela
+          let table = document.getElementById("fruit-table");
+          let tableBody = table.getElementsByTagName("tbody")[0];
+          tableBody.innerHTML = "";
+          for (let i = 0; i < data.length; i++) {
+              let row = tableBody.insertRow();
+              let nameCell = row.insertCell();
+              let bagCell = row.insertCell();
+              let quantityCell = row.insertCell();
+              nameCell.innerHTML = data[i].name;
+              bagCell.innerHTML = data[i].bag;
+              quantityCell.innerHTML = data[i].quantity;
+          }
+      });
+}
 
 
   $(document).ready(function(){

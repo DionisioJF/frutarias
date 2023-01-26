@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Frutaria</title> 
+        <link rel="stylesheet" href="./assets/css/reset.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/cabecalho.css">
+        <link rel="stylesheet" href="./assets/css/form.css">
+        <link rel="stylesheet" href="./assets/css/tabela.css">
+    </head> 
+    <body>
+        <header class="cabecalho">
+            <h1 class="titulo1 titulo">Sacolão do</h1>
+            <div class="div">
+                <h1 class="titulo2 titulo">Sergio</h1>
+                <img class="imagem" src="./assets/img/sentiment_satisfied.svg">
+            </div>
+        </header>
+         
+
+        <form> 
+            <label for="fruit-name">Nome da fruta:</label> 
+            <input type="text" id="fruit-name" name="fruit-name"> 
+
+            <label for="fruit-bag">Sacola:</label> 
+            <input type="text" id="fruit-bag" name="fruit-bag"> 
+
+            <label for="fruit-quantity">Quantidade:</label> 
+            <input type="text" id="fruit-quantity" name="fruit-quantity"> 
+
+            <input class="botao" id="save" type="button" value="Adicionar fruta" onclick="addFruit()"> 
+        </form> 
+
+        <table id="fruit-table"> 
+            <div class="icon">
+                <i class="fas fa-trash-alt" onmousedown="removeFruit(event, selectedCell.parentNode)"></i> 
+                <i class="fas fa-pen" onmousedown="updateFruit(event, selectedCell.parentNode)"></i>
+            </div>
+             
+            
+            
+
+        
+
+            <tr> 
+                <th>Nome</th> 
+                <th>Sacola</th> 
+                <th>Quantidade</th> 
+
+            </tr> 
+            <td style="cursor:pointer">Fruta 1</td>
+            <td style="cursor:pointer">velha</td>
+            <td style="cursor:pointer">5</td>
+
+
+        </table> 
+        <script type="text/javascript" src="assets/js/script.js"></script>  
+    </body> 
+</html>

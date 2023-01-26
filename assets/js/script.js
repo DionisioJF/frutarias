@@ -42,6 +42,35 @@ function removeFruit(event) {
     selectedCell.innerHTML = newValue;
   }
 
+  $.getJSON("fruit-table.json", function(data) {
+    // Atualize o conteúdo da tabela com os dados do JSON
+});
+
+
+fetch('./fruit-table.json')
+  .then(response => response.json())
+  .then(data => {
+    // Obtém a tabela do HTML
+    let table = document.getElementById('fruit-table');
+
+    // Limpa a tabela antes de adicionar as novas linhas
+    while (table.rows.length > 1) {
+      table.deleteRow(1);
+    }
+
+    // Adiciona as linhas com os dados do JSON
+    data.forEach(fruit => {
+      let row = table.insertRow();
+      let nameCell = row.insertCell();
+      let bagCell = row.insertCell();
+      let quantityCell = row.insertCell();
+
+      nameCell.innerHTML = fruit.name;
+      bagCell.innerHTML = fruit.bag;
+      quantityCell.innerHTML = fruit.quantity;
+    });
+  });
+
 
   $(document).ready(function(){
     // Carregar tabela do arquivo JSON

@@ -1,0 +1,19 @@
+name: Update JSON data
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Update JSON data
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git add data.json
+        git commit -m "Update JSON data"
+        git push

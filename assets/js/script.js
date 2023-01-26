@@ -54,3 +54,56 @@ table.onclick = function(event) {
     target = target.parentNode;
   }
 }
+
+// Obtém os dados da tabela
+function getTableData() {
+  // Código para obter os dados da tabela, por exemplo, usando o jQuery para selecionar as células e percorrer as linhas
+  var rows = $("table tr");
+  var data = [];
+  rows.each(function(i, row) {
+      var cells = $(row).find("td");
+      var rowData = [];
+      cells.each(function(j, cell) {
+          rowData.push($(cell).text());
+      });
+      data.push(rowData);
+  });
+  return data;
+}
+
+// Converte os dados da tabela para JSON e salva no arquivo
+function saveTableData() {
+  var data = getTableData();
+  var jsonData = JSON.stringify(data);
+  // Código para salvar o arquivo jsonData no repositório
+  var file = new Blob([jsonData], {type: "application/json"});
+  saveAs(file, "fruit-table.json");
+}
+
+$("#save").click(function(){
+  // Get the current data in the table
+  var tableData = getTableData();
+
+  // Convert the data to a JSON string
+  var jsonData = JSON.stringify(tableData);
+
+  // Save the JSON data to a file
+  saveJSONToFile(jsonData);
+
+  // Commit and push the changes to the repository
+  gitCommitAndPush();
+});
+
+function getTableData(){
+  // Code to retrieve the data from the table
+  // and store it in a variable
+}
+
+function saveJSONToFile(jsonData){
+  // Code to save the JSON data to a file
+}
+
+function gitCommitAndPush(){
+  // Code to commit and push the changes to the repository
+  // using the git command line
+}

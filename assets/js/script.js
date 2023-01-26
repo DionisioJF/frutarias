@@ -43,6 +43,18 @@ function removeFruit(event) {
   }
 
 
+  $(document).ready(function(){
+    // Carregar tabela do arquivo JSON
+    $.getJSON("fruit-table.json", function(data) {
+        // Iterar sobre cada linha de dados e adicionar à tabela
+        $.each(data, function(index, fruit) {
+            // Adicionar linha à tabela
+            addFruitToTable(fruit.name, fruit.quantity, fruit.price);
+        });
+    });
+});
+
+
 var table = document.getElementById("fruit-table");
 table.onclick = function(event) {
   var target = event.target;

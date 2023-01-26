@@ -1,0 +1,8 @@
+{
+    "fruits": [
+      { "name": "Banana", "quantity": "50", "bag": "velha" },
+      { "name": "Maçã", "quantity": "20", "bag": "velha" },
+      { "name": "Uva", "quantity": "30", "bag": "velha" }
+    ]
+  }
+  

@@ -1,0 +1,32 @@
+
+
+.cabecalho {
+    background-color: #233D4D;
+    padding: 20px;
+}
+
+.titulo {
+    color: white;
+}
+
+.titulo1 {
+    font-weight: lighter;
+    font-size: 20px;
+    margin-left: 90px;
+}
+
+.div {
+    display: flex;
+}
+
+.titulo2 {
+    font-weight: bolder;
+    font-size: 80px;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.imagem {
+    
+}

@@ -1,0 +1,28 @@
+form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 350px;
+}
+
+input {
+    background: none;
+    border: solid 1px black;
+}
+
+#fruit-name, #fruit-bag {
+    margin-right: 50px;
+}
+
+.botao {
+    display: block;
+    color: white;
+    background-color: #233D4D;
+    padding: 10px;
+    padding-right: 334px;
+    padding-left: 334px;
+    margin-top: 10px;
+}
+
+.botao:hover {
+    cursor: pointer;
+}
